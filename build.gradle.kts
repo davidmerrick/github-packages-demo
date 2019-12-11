@@ -5,6 +5,11 @@ plugins {
     `maven-publish`
 }
 
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
 publishing {
     repositories {
         maven {
