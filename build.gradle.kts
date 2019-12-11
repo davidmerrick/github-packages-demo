@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 group = "com.merricklabs.hello"
 
 plugins {
@@ -21,9 +23,17 @@ publishing {
             }
         }
     }
-    publications {
-        register("gpr") {
-            from(components["java"])
-        }
-    }
+}
+
+dependencies {
+    implementation(kotlin("stdlib-jdk8"))
+}
+
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    jvmTarget = "1.8"
+}
+val compileTestKotlin: KotlinCompile by tasks
+compileTestKotlin.kotlinOptions {
+    jvmTarget = "1.8"
 }
