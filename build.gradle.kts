@@ -38,7 +38,6 @@ val buildJar by tasks.creating(Jar::class) {
 publishing {
     publications {
         create<MavenPublication>("default") {
-            from(components["java"])
             artifact(buildJar)
         }
     }
