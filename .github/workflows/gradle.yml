@@ -12,4 +12,7 @@ jobs:
     - name: Build
       run: ./gradlew build
     - name: Publish
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
       run: ./gradlew publish
